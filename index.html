@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蟹×NUKARITUAL｜京丹後 1日1組・招待制プラン</title>
+    <meta name="description" content="京丹後で、蟹を迎える体を整える。温浴を順番のあるコースとして組み立て、最後は茹でたての蟹へ。1日1組の招待制プラン。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .font-serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+        ::selection {
+            background-color: #d4af37;
+            color: white;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Utilities */
+        .text-gold { color: #d4af37; }
+        .bg-gold { background-color: #d4af37; }
+        .border-gold { border-color: #d4af37; }
+        .text-crab { color: #b93a2b; }
+        .bg-crab { background-color: #b93a2b; }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-4 py-3 flex justify-between items-center transition-all shadow-sm">
+        <div class="font-serif font-bold tracking-wider text-sm md:text-base text-[#d4af37]">
+            KAJI'S INVITATION
+        </div>
+
+        <div class="flex items-center gap-2">
+            <button id="nav-share-btn" onclick="handleShare()" class="hidden sm:flex items-center gap-2 border border-gray-200 bg-white text-gray-800 text-xs px-3 py-2 rounded-full font-bold hover:border-[#d4af37] transition-colors shadow-sm">
+                <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+                <span id="nav-share-text">共有</span>
+            </button>
+
+            <button onclick="safeScrollTo('reservation')" class="bg-black text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-[#333] transition-colors shadow-lg">
+                招待について相談する
+            </button>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="max-w-3xl mx-auto px-4 pt-12 pb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#eee] text-[#555] px-2 py-1 rounded text-[10px] font-bold tracking-wider">
+                INVITATION ONLY
+            </span>
+            <span class="bg-[#d4af37]/10 text-[#d4af37] px-2 py-1 rounded text-[10px] font-bold tracking-wider">
+                KYOTANGO
+            </span>
+            <span class="bg-[#b93a2b]/10 text-[#b93a2b] px-2 py-1 rounded text-[10px] font-bold tracking-wider">
+                NUKARITUAL × CRAB
+            </span>
+        </div>
+
+        <h1 class="text-2xl md:text-4xl font-bold leading-tight mb-4 font-serif">
+            整えて、味わいきる。<br />
+            京丹後で、蟹の前に「いちばんいい状態」をつくってお待ちしています。
+        </h1>
+
+        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
+            温浴を“アラカルト”ではなく<b>「順番のあるコース」</b>として組み立て、
+            そのまま<b>「茹でたての蟹」</b>へ。
+            <br class="hidden md:block" />
+            気持ちよさが上がっていく流れを、最後までつなげます。
+        </p>
+
+        <!-- Quick Facts -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+            <!-- Fact 1 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                <div class="flex items-center gap-2 text-xs font-bold text-gray-700 mb-2">
+                    <i data-lucide="clock" class="w-4 h-4 text-gray-500"></i>
+                    所要
+                </div>
+                <div class="font-serif font-bold text-sm md:text-base text-gray-900">約6.5〜7時間</div>
+                <div class="text-[10px] text-gray-500 mt-1">※開始時刻で微調整可</div>
+            </div>
+            <!-- Fact 2 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                <div class="flex items-center gap-2 text-xs font-bold text-gray-700 mb-2">
+                    <i data-lucide="japanese-yen" class="w-4 h-4 text-gray-500"></i>
+                    価格
+                </div>
+                <div class="font-serif font-bold text-sm md:text-base text-gray-900">75,000円 / 人</div>
+                <div class="text-[10px] text-gray-500 mt-1">体験・蟹・送迎込</div>
+            </div>
+            <!-- Fact 3 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                <div class="flex items-center gap-2 text-xs font-bold text-gray-700 mb-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                    枠
+                </div>
+                <div class="font-serif font-bold text-sm md:text-base text-gray-900">1日1組</div>
+                <div class="text-[10px] text-gray-500 mt-1">※2〜4名目安</div>
+            </div>
+            <!-- Fact 4 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                <div class="flex items-center gap-2 text-xs font-bold text-gray-700 mb-2">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
+                    送迎
+                </div>
+                <div class="font-serif font-bold text-sm md:text-base text-gray-900">天橋立駅 他</div>
+                <div class="text-[10px] text-gray-500 mt-1">お酒も可（運転不要）</div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-end border-b border-gray-200 pb-6">
+            <div class="border-2 border-black bg-white px-8 py-3 shadow-[4px_4px_0px_0px_#d4af37]">
+                <span class="block text-[10px] text-center tracking-[0.3em] text-gray-500 mb-1">MEMBERSHIP</span>
+                <span class="block text-lg font-bold text-black tracking-[0.2em]">完全招待制</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 pb-20">
+        <!-- Hero Image Area -->
+        <div class="w-full aspect-video bg-gray-200 rounded-lg mb-10 overflow-hidden relative group shadow-xl">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 md:p-10 z-10">
+                <div>
+                    <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-2">THE CONCEPT</p>
+                    <p class="text-white font-serif text-lg md:text-2xl leading-relaxed">
+                        迷わなくていいように、<br />
+                        いちばんおいしい瞬間までご案内します。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Placeholder Visual -->
+            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                <div class="text-center text-gray-600">
+                    <i data-lucide="sparkles" class="w-12 h-12 mx-auto mb-2 opacity-50"></i>
+                    <span class="text-xs tracking-widest">[Image: ぬか×蒸気×海の気配]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Persona Switch -->
+        <section class="mb-12">
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm transition-all duration-300">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <p class="text-[10px] font-bold tracking-widest text-gray-500 mb-2">FOR WHOM</p>
+                        <h2 id="persona-title" class="text-xl md:text-2xl font-bold mb-2 fade-in">サウナ初心者の方へ</h2>
+                        <p id="persona-lead" class="text-sm text-gray-600 leading-relaxed fade-in">
+                            「頭がふっと静かになる感じ（いわゆる「ととのい」）が分からない」「水風呂がこわい」でも大丈夫です。最初に“今日の流れ”を短くお伝えして、当日は迷わず体験に入れるように整えます。
+                        </p>
+                    </div>
+
+                    <div class="shrink-0">
+                        <div class="inline-flex bg-gray-100 rounded-full p-1 border border-gray-200">
+                            <button onclick="setPersona('beginner')" id="btn-beginner" class="px-3 py-2 text-xs font-bold rounded-full transition-colors bg-black text-white">
+                                初心者
+                            </button>
+                            <button onclick="setPersona('connoisseur')" id="btn-connoisseur" class="px-3 py-2 text-xs font-bold rounded-full transition-colors text-gray-600 hover:text-gray-900">
+                                玄人
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="persona-bullets" class="mt-6 grid md:grid-cols-3 gap-3 fade-in">
+                    <!-- Bullets will be injected here via JS -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-700">
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="arrow-right" class="w-4 h-4 mt-0.5 text-gray-500 shrink-0"></i>
+                            <span class="leading-relaxed">最初に“今日の流れ”を1枚で共有（不安を先に減らす）</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-700">
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="arrow-right" class="w-4 h-4 mt-0.5 text-gray-500 shrink-0"></i>
+                            <span class="leading-relaxed">水風呂は一緒に入ります（入らなくても成立する流れです）</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-700">
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="arrow-right" class="w-4 h-4 mt-0.5 text-gray-500 shrink-0"></i>
+                            <span class="leading-relaxed">説明は短く。体で分かる時間を長くします</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reassurance -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-gray-300 font-bold text-6xl font-serif opacity-20 -mr-6 select-none">00</span>
+                <h2 class="text-xl md:text-2xl font-bold pt-4 relative z-10">不安を先に減らして、体験に入ります</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-2 text-sm font-bold mb-2">
+                        <i data-lucide="info" class="w-4 h-4 text-gray-500"></i>
+                        最初に「何をするか」を短く共有
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">事前に流れが見えないと不安になる方がいます。冒頭で“1枚のスケジュール”で共有し、不安を先に減らしてから体験に入ります。</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-2 text-sm font-bold mb-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-gray-500"></i>
+                        安全・快適を優先する設計
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">体調や暑さ耐性に合わせて調整します。無理に追い込みません（不安な点は事前にLINEで相談ください）。</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center gap-2 text-sm font-bold mb-2">
+                        <i data-lucide="camera" class="w-4 h-4 text-gray-500"></i>
+                        記録が必要なら、こちらで撮ります
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">スマホを握り続けると集中が切れやすくなります。必要なら最初に「撮影はお任せください」とお伝えします。体験に集中できるように整えます。</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-[#fff7e6] border border-[#f0d7a5] rounded-xl p-4 text-sm text-[#6b4e16]">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4 mt-0.5 shrink-0"></i>
+                    <p class="leading-relaxed">
+                        <b>注意：</b>本体験は医療行為ではありません。体調不安・既往歴・妊娠中・当日の飲酒状況などは、安全のため事前にLINEで共有ください（無理のない設計に調整します）。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Point 1 -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-[#d4af37] font-bold text-6xl font-serif opacity-20 -mr-6 select-none">01</span>
+                <h2 class="text-2xl font-bold pt-4 relative z-10">温浴を「コース料理」にしました</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="bg-[#1a1a1a] p-6 text-white text-center">
+                    <h3 class="font-serif text-xl text-[#d4af37] mb-2">The Full Course</h3>
+                    <p class="text-xs text-gray-400 tracking-widest">“なぜ今これをするか”を、短く添えます</p>
+                </div>
+
+                <div class="divide-y divide-gray-100">
+                    <!-- Step 1 -->
+                    <div class="p-6 md:p-8 flex gap-6 items-start">
+                        <div class="bg-[#d4af37]/10 text-[#d4af37] p-3 rounded-full shrink-0 mt-1">
+                            <i data-lucide="flame" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">前菜：体の土台を作る</p>
+                            <h4 class="font-bold text-lg mb-2">1. 芯まで熱を入れる「酵素風呂」</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">サウナの熱とは質が違います。発酵の熱で、体の奥までじんわり温めます。ここで土台ができると、後半の体感が変わります。</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-6 md:p-8 flex gap-6 items-start">
+                        <div class="bg-green-50 text-green-700 p-3 rounded-full shrink-0 mt-1">
+                            <i data-lucide="flower-2" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">メイン：集中して、静かになる</p>
+                            <h4 class="font-bold text-lg mb-2">2. 葉であおいで温める施術（ウィスキング）</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">葉の香り、蒸気、肌への触れ方。熱さが苦しくならないように調整しながら、静かに集中できる時間をつくります。初心者でも不安が出ないよう、入り口の説明は短くします。</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-6 md:p-8 flex gap-6 items-start bg-[#fafafa]">
+                        <div class="bg-blue-50 text-blue-700 p-3 rounded-full shrink-0 mt-1">
+                            <i data-lucide="user" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">サービスの核：迷わなくていい時間</p>
+                            <h4 class="font-bold text-lg mb-2">3. 迷わせない「つきっきりの案内」</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">選ぶ場面を増やしません。体調や表情を見ながら、温度・時間・休憩をその場で調整します。お客様は、体の感覚に集中して過ごしてください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gray-50 border border-gray-200 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <i data-lucide="wind" class="w-4 h-4 text-gray-600 mt-0.5"></i>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        <b>重要：</b>選ぶ場面を増やしません。飲み物や休憩、温度は基本こちらで整え、反応を見ながら調整します。希望がある場合は、最初に教えてください。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Point 2: Crab -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-[#b93a2b] font-bold text-6xl font-serif opacity-20 -mr-6 select-none">02</span>
+                <h2 class="text-2xl font-bold pt-4 relative z-10">いちばんおいしい状態で蟹を出します</h2>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-[#b93a2b]/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+
+                <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-[#b93a2b] rounded-full"></span>
+                    魚政の茹でたてを、いちばんいいタイミングで
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    温浴のあと、味や香りをはっきり感じると言う方がいます。
+                    <br />
+                    その状態で食べてほしいのが、魚政の蟹です。
+                    <br />
+                    <br />
+                    <b>「茹でたてを、冷まさずに、その場で」</b>
+                    <br />
+                    <br />
+                    ただ豪華なだけではありません。
+                    整えた状態で、いちばんおいしく感じる瞬間を用意しておきます。
+                </p>
+
+                <div class="bg-[#b93a2b]/5 border border-[#b93a2b]/20 p-4 rounded-lg flex items-center gap-3">
+                    <i data-lucide="utensils-crossed" class="w-4 h-4 text-[#b93a2b]"></i>
+                    <p class="text-xs font-bold text-[#b93a2b]">
+                        ゴールは「満腹」ではなく、「最高の状態で味わいきる」こと。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Point 3: Logistics -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-gray-300 font-bold text-6xl font-serif opacity-20 -mr-6 select-none">03</span>
+                <h2 class="text-xl font-bold pt-4 relative z-10">手配は、こちらでまとめます</h2>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <div class="flex flex-col md:flex-row gap-8 text-sm">
+                    <div class="flex-1">
+                        <h4 class="font-bold mb-2 flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i> 送迎はこちらで手配します
+                        </h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            天橋立駅／峰山駅までお越しください。そこから先は車でご案内します。お酒を飲んでも、運転は不要です。
+                        </p>
+                        <div class="mt-4 flex items-start gap-2 text-xs text-gray-500">
+                            <i data-lucide="camera" class="w-3.5 h-3.5 mt-0.5"></i>
+                            <span>撮影したい方は最初に言ってください（必要なら、こちらで撮ってお渡しします）。</span>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 border-t md:border-t-0 md:border-l border-gray-200 pt-4 md:pt-0 md:pl-8">
+                        <h4 class="font-bold mb-2 flex items-center gap-2">
+                            <i data-lucide="japanese-yen" class="w-4 h-4"></i> 料金について
+                        </h4>
+                        <p class="text-gray-600 mb-2">
+                            <span class="text-2xl font-bold font-serif">75,000</span> 円 / 人
+                        </p>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            温浴コース／蟹／移動／案内込み。
+                            <br />
+                            「説明も価値」になるタイプの方には、コース料理のように短く添えていきます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule -->
+        <div class="bg-[#1a1a1a] text-white p-8 rounded-2xl mb-16 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4af37] to-[#b93a2b]"></div>
+
+            <h3 class="text-center font-serif text-lg md:text-xl mb-8 tracking-widest">THE SCHEDULE</h3>
+
+            <div class="space-y-8 max-w-lg mx-auto border-l border-gray-700 pl-8 relative">
+                <!-- Item 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[39px] bg-[#d4af37] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-1">START</p>
+                    <p class="font-bold text-lg">集合・お迎え</p>
+                    <p class="text-sm text-gray-300 leading-relaxed mt-1">駅／宿まで。ここから先は、任せてください。</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[39px] bg-gray-600 w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-1">NUKARITUAL</p>
+                    <p class="font-bold text-lg">温浴フルコース（約3.0〜3.5h）</p>
+                    <p class="text-sm text-gray-300 leading-relaxed mt-1">酵素→休憩→ウィスキング→クールダウン。体調で微調整。</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="relative group">
+                    <div class="absolute -left-[39px] bg-[#b93a2b] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <p class="text-[#b93a2b] text-xs font-bold tracking-widest mb-1">CRAB</p>
+                    <p class="font-bold text-lg">茹でたて蟹（約2.0h）</p>
+                    <p class="text-sm text-gray-300 leading-relaxed mt-1">整えた状態で、無心で味わいきる。</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="relative group">
+                    <div class="absolute -left-[39px] bg-[#d4af37] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-1">GOAL</p>
+                    <p class="font-bold text-lg">希望場所へお送り</p>
+                    <p class="text-sm text-gray-300 leading-relaxed mt-1">宿／駅へ。お酒を飲んでもOK。</p>
+                </div>
+            </div>
+
+            <div class="mt-10 bg-white/5 border border-white/10 rounded-xl p-4 text-xs text-gray-300 leading-relaxed">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 mt-0.5 text-gray-400"></i>
+                    <p>
+                        時間配分は固定ではありません。体調・暑さ耐性・当日の流れで、
+                        <b class="text-white">気持ちよさがいちばん大きくなるところ</b>に寄せます。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q&A -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-gray-300 font-bold text-6xl font-serif opacity-20 -mr-6 select-none">04</span>
+                <h2 class="text-xl md:text-2xl font-bold pt-4 relative z-10">よくある不安に先回りします</h2>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                <div class="divide-y divide-gray-100">
+                    <div class="p-6 md:p-7">
+                        <p class="font-bold text-gray-900 mb-2 flex items-start gap-2">
+                            <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+                            「ヌカリチュアル」ってスピリチュアルな儀式？
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">違います。温度、休憩、香り、触れ方を組み合わせて、気持ちよさが続くように組み立てた温浴コースです。</p>
+                    </div>
+                    <div class="p-6 md:p-7">
+                        <p class="font-bold text-gray-900 mb-2 flex items-start gap-2">
+                            <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+                            サウナ初心者でも大丈夫？
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">大丈夫です。最初に短く流れを共有し、不安が出やすいポイント（水風呂・暗さ・熱さ等）は先回りして調整します。</p>
+                    </div>
+                    <div class="p-6 md:p-7">
+                        <p class="font-bold text-gray-900 mb-2 flex items-start gap-2">
+                            <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+                            水着や持ち物は？
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">基本は手ぶらで大丈夫です（必要なら事前に案内します）。気になることがあれば、タオルの肌触りやコンタクトなど、ひとことだけ教えてください。</p>
+                    </div>
+                    <div class="p-6 md:p-7">
+                        <p class="font-bold text-gray-900 mb-2 flex items-start gap-2">
+                            <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+                            医療的な効果を保証するもの？
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">医療行為ではありません。体調に不安がある場合は、事前に相談いただいた上で“無理のない設計”に調整します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="reservation" class="bg-white border border-gray-200 p-8 md:p-12 rounded-2xl text-center shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-[#d4af37]"></div>
+
+            <div class="max-w-xl mx-auto relative z-10">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4 text-gray-900">京丹後で、お待ちしています。</h2>
+                <p class="text-sm text-gray-600 mb-8 leading-relaxed">
+                    「行ってみようかな」と思ったら、LINEでひと言ください。
+                    <br />
+                    日程調整と当日の手配は、こちらでまとめます。
+                </p>
+
+                <!-- Copy Box -->
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8 text-left relative group hover:border-[#d4af37]/50 transition-colors">
+                    <button onclick="handleCopy()" class="absolute top-4 right-4 flex items-center gap-2 bg-white border border-gray-200 hover:border-[#d4af37] text-gray-700 text-xs px-3 py-2 rounded-lg transition-all shadow-sm active:scale-95">
+                        <i data-lucide="copy" class="w-3.5 h-3.5" id="copy-icon"></i>
+                        <span id="copy-text">コピーする</span>
+                    </button>
+
+                    <p class="text-[10px] text-gray-400 mb-3 font-bold tracking-widest uppercase">LINE Template</p>
+                    <pre id="reservation-template" class="text-sm font-mono text-gray-600 whitespace-pre-wrap leading-relaxed select-all">【蟹×NUKARITUAL 申込み／相談】
+
+紹介者（いる場合）：
+人数：
+希望日（第1〜第3候補）：
+集合（天橋立駅／峰山駅／宿）：
+解散希望（ホテル名など）：
+アレルギー・苦手食材：
+体調面で気をつけたいこと（あれば）：
+
+※日程が決まった後、3分ほどの事前アンケートをお送りします。体調と好みに合わせて、当日の流れを整えます。</pre>
+
+                    <div class="mt-4 bg-white border border-gray-200 rounded-lg p-3 text-xs text-gray-600 leading-relaxed">
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5 mt-0.5 text-gray-500"></i>
+                            <p>
+                                選択肢が多いと迷いやすい方でも大丈夫です。
+                                <br />
+                                <b>必要な確認は日程確定後の“3分アンケート”</b>でこちらがまとめて伺います。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <!-- ※ここは相棒の公式LINEのURLに差し替えてください -->
+                    <a href="https://line.me/" target="_blank" rel="noreferrer" class="block w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-100 flex items-center justify-center gap-2 transform hover:-translate-y-1 decoration-0">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        カジにLINEで相談する
+                    </a>
+
+                    <button onclick="handleShare()" class="block w-full bg-white border border-gray-300 hover:border-[#d4af37] text-gray-900 font-bold py-4 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
+                        <i data-lucide="share-2" class="w-5 h-5" id="share-icon"></i>
+                        <span id="share-text">このプランを共有する</span>
+                    </button>
+
+                    <p class="text-xs text-gray-400">
+                        ※相談だけでも大丈夫です。
+                        <br />
+                        ※当日コンディションによって内容を微調整します（無理はさせません）。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12 text-center">
+        <div class="flex justify-center gap-4 mb-4 opacity-50 text-gray-400">
+            <i data-lucide="droplets" class="w-5 h-5"></i>
+            <i data-lucide="flame" class="w-5 h-5"></i>
+        </div>
+        <p class="text-xs text-gray-400 tracking-widest font-serif">NUKARITUAL × UOMASA</p>
+        <p class="text-[10px] text-gray-300 mt-2">Hosted by Kaji</p>
+    </footer>
+
+    <!-- Logic Script -->
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        // Data for Persona Switch
+        const personaData = {
+            beginner: {
+                title: 'サウナ初心者の方へ',
+                lead: '「頭がふっと静かになる感じ（いわゆる「ととのい」）が分からない」「水風呂がこわい」でも大丈夫です。最初に“今日の流れ”を短くお伝えして、当日は迷わず体験に入れるように整えます。',
+                bullets: [
+                    '最初に“今日の流れ”を1枚で共有（不安を先に減らす）',
+                    '水風呂は一緒に入ります（入らなくても成立する流れです）',
+                    '説明は短く。体で分かる時間を長くします'
+                ]
+            },
+            connoisseur: {
+                title: 'サウナ慣れしている方へ',
+                lead: '熱さだけで終わらせません。香り、触れ方、呼吸を重ねて、深く静かになるところまで組み立てます。',
+                bullets: [
+                    '熱の入れ方を段階で変えます（我慢させるためにはしません）',
+                    'ウィスクの種類と香りの意味を、短く添えます',
+                    '時間が許せば、追加1セットも相談できます'
+                ]
+            }
+        };
+
+        function setPersona(type) {
+            const data = personaData[type];
+            const titleEl = document.getElementById('persona-title');
+            const leadEl = document.getElementById('persona-lead');
+            const bulletsEl = document.getElementById('persona-bullets');
+            
+            // Text Update with fade effect
+            titleEl.classList.remove('fade-in');
+            leadEl.classList.remove('fade-in');
+            bulletsEl.classList.remove('fade-in');
+            
+            // Trigger reflow
+            void titleEl.offsetWidth;
+
+            titleEl.textContent = data.title;
+            leadEl.textContent = data.lead;
+            
+            // Generate Bullets HTML
+            bulletsEl.innerHTML = data.bullets.map(b => `
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-700">
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 mt-0.5 text-gray-500 shrink-0"></i>
+                        <span class="leading-relaxed">${b}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-add animations
+            titleEl.classList.add('fade-in');
+            leadEl.classList.add('fade-in');
+            bulletsEl.classList.add('fade-in');
+
+            // Re-init icons for the new bullets
+            lucide.createIcons();
+
+            // Button Styles
+            const btnBeginner = document.getElementById('btn-beginner');
+            const btnConnoisseur = document.getElementById('btn-connoisseur');
+
+            if (type === 'beginner') {
+                btnBeginner.className = "px-3 py-2 text-xs font-bold rounded-full transition-colors bg-black text-white";
+                btnConnoisseur.className = "px-3 py-2 text-xs font-bold rounded-full transition-colors text-gray-600 hover:text-gray-900";
+            } else {
+                btnBeginner.className = "px-3 py-2 text-xs font-bold rounded-full transition-colors text-gray-600 hover:text-gray-900";
+                btnConnoisseur.className = "px-3 py-2 text-xs font-bold rounded-full transition-colors bg-black text-white";
+            }
+        }
+
+        // Scroll Logic
+        function safeScrollTo(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Copy Logic
+        async function handleCopy() {
+            const text = document.getElementById('reservation-template').innerText;
+            const btnText = document.getElementById('copy-text');
+            const icon = document.getElementById('copy-icon');
+
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    // Fallback
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                }
+
+                // Feedback
+                const originalText = btnText.innerText;
+                btnText.innerText = 'コピーしました';
+                btnText.classList.add('text-green-600');
+                // Replace icon with Check temporarily (need to manage SVG manually here since lucide.createIcons is static)
+                icon.setAttribute('data-lucide', 'check');
+                lucide.createIcons(); 
+                
+                setTimeout(() => {
+                    btnText.innerText = originalText;
+                    btnText.classList.remove('text-green-600');
+                    icon.setAttribute('data-lucide', 'copy');
+                    lucide.createIcons();
+                }, 2500);
+
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+        }
+
+        // Share Logic
+        async function handleShare() {
+            const url = window.location.href;
+            const title = "蟹×NUKARITUAL｜京丹後 1日1組・招待制プラン";
+            const btnText = document.getElementById('share-text');
+            const navBtnText = document.getElementById('nav-share-text');
+
+            try {
+                if (navigator.share) {
+                    await navigator.share({ title, url });
+                } else {
+                    // Fallback to clipboard
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        await navigator.clipboard.writeText(url);
+                    } else {
+                        const textArea = document.createElement('textarea');
+                        textArea.value = url;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
+                    }
+                }
+
+                // Feedback (Update both buttons if they exist)
+                const showFeedback = (el, original) => {
+                    if(!el) return;
+                    el.innerText = 'URLコピーしました';
+                    setTimeout(() => {
+                        el.innerText = original;
+                    }, 2500);
+                };
+
+                showFeedback(btnText, 'このプランを共有する');
+                showFeedback(navBtnText, '共有');
+
+            } catch (err) {
+                console.error('Share failed', err);
+            }
+        }
+    </script>
+</body>
+</html>
