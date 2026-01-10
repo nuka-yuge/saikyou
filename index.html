@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,54 +10,83 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
-        
+
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #f9f9f9;
             color: #333;
         }
+
         .font-serif {
             font-family: 'Noto Serif JP', serif;
         }
+
         ::selection {
             background-color: #d4af37;
             color: white;
         }
+
         .smooth-scroll {
             scroll-behavior: smooth;
         }
-        
+
         /* Custom Utilities */
-        .text-gold { color: #d4af37; }
-        .bg-gold { background-color: #d4af37; }
-        .border-gold { border-color: #d4af37; }
-        .text-crab { color: #b93a2b; }
-        .bg-crab { background-color: #b93a2b; }
-        
+        .text-gold {
+            color: #d4af37;
+        }
+
+        .bg-gold {
+            background-color: #d4af37;
+        }
+
+        .border-gold {
+            border-color: #d4af37;
+        }
+
+        .text-crab {
+            color: #b93a2b;
+        }
+
+        .bg-crab {
+            background-color: #b93a2b;
+        }
+
         .fade-in {
             animation: fadeIn 0.3s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body class="min-h-screen">
 
     <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-4 py-3 flex justify-between items-center transition-all shadow-sm">
+    <nav
+        class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-4 py-3 flex justify-between items-center transition-all shadow-sm">
         <div class="font-serif font-bold tracking-wider text-sm md:text-base text-[#d4af37]">
             KAJI'S INVITATION
         </div>
 
         <div class="flex items-center gap-2">
-            <button id="nav-share-btn" onclick="handleShare()" class="hidden sm:flex items-center gap-2 border border-gray-200 bg-white text-gray-800 text-xs px-3 py-2 rounded-full font-bold hover:border-[#d4af37] transition-colors shadow-sm">
+            <button id="nav-share-btn" onclick="handleShare()"
+                class="hidden sm:flex items-center gap-2 border border-gray-200 bg-white text-gray-800 text-xs px-3 py-2 rounded-full font-bold hover:border-[#d4af37] transition-colors shadow-sm">
                 <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
                 <span id="nav-share-text">共有</span>
             </button>
 
-            <button onclick="safeScrollTo('reservation')" class="bg-black text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-[#333] transition-colors shadow-lg">
+            <button onclick="safeScrollTo('reservation')"
+                class="bg-black text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-[#333] transition-colors shadow-lg">
                 招待について相談する
             </button>
         </div>
@@ -77,7 +107,7 @@
         </div>
 
         <h1 class="text-2xl md:text-4xl font-bold leading-tight mb-4 font-serif">
-            整えて、味わいきる。<br />
+            ととのえて、味わいきる。<br />
             京丹後で、蟹の前に「いちばんいい状態」をつくってお待ちしています。
         </h1>
 
@@ -173,10 +203,12 @@
 
                     <div class="shrink-0">
                         <div class="inline-flex bg-gray-100 rounded-full p-1 border border-gray-200">
-                            <button onclick="setPersona('beginner')" id="btn-beginner" class="px-3 py-2 text-xs font-bold rounded-full transition-colors bg-black text-white">
+                            <button onclick="setPersona('beginner')" id="btn-beginner"
+                                class="px-3 py-2 text-xs font-bold rounded-full transition-colors bg-black text-white">
                                 初心者
                             </button>
-                            <button onclick="setPersona('connoisseur')" id="btn-connoisseur" class="px-3 py-2 text-xs font-bold rounded-full transition-colors text-gray-600 hover:text-gray-900">
+                            <button onclick="setPersona('connoisseur')" id="btn-connoisseur"
+                                class="px-3 py-2 text-xs font-bold rounded-full transition-colors text-gray-600 hover:text-gray-900">
                                 玄人
                             </button>
                         </div>
@@ -220,21 +252,24 @@
                         <i data-lucide="info" class="w-4 h-4 text-gray-500"></i>
                         最初に「何をするか」を短く共有
                     </div>
-                    <p class="text-sm text-gray-600 leading-relaxed">事前に流れが見えないと不安になる方がいます。冒頭で“1枚のスケジュール”で共有し、不安を先に減らしてから体験に入ります。</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        事前に流れが見えないと不安になる方がいます。冒頭で“1枚のスケジュール”で共有し、不安を先に減らしてから体験に入ります。</p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                     <div class="flex items-center gap-2 text-sm font-bold mb-2">
                         <i data-lucide="shield-check" class="w-4 h-4 text-gray-500"></i>
                         安全・快適を優先する設計
                     </div>
-                    <p class="text-sm text-gray-600 leading-relaxed">体調や暑さ耐性に合わせて調整します。無理に追い込みません（不安な点は事前にLINEで相談ください）。</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">体調や暑さ耐性に合わせて調整します。無理に追い込みません（不安な点は事前にLINEで相談ください）。
+                    </p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                     <div class="flex items-center gap-2 text-sm font-bold mb-2">
                         <i data-lucide="camera" class="w-4 h-4 text-gray-500"></i>
                         記録が必要なら、こちらで撮ります
                     </div>
-                    <p class="text-sm text-gray-600 leading-relaxed">スマホを握り続けると集中が切れやすくなります。必要なら最初に「撮影はお任せください」とお伝えします。体験に集中できるように整えます。</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        スマホを握り続けると集中が切れやすくなります。必要なら最初に「撮影はお任せください」とお伝えします。体験に集中できるように整えます。</p>
                 </div>
             </div>
 
@@ -270,7 +305,8 @@
                         <div>
                             <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">前菜：体の土台を作る</p>
                             <h4 class="font-bold text-lg mb-2">1. 芯まで熱を入れる「酵素風呂」</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">サウナの熱とは質が違います。発酵の熱で、体の奥までじんわり温めます。ここで土台ができると、後半の体感が変わります。</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                サウナの熱とは質が違います。発酵の熱で、体の奥までじんわり温めます。ここで土台ができると、後半の体感が変わります。</p>
                         </div>
                     </div>
                     <!-- Step 2 -->
@@ -281,7 +317,8 @@
                         <div>
                             <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">メイン：集中して、静かになる</p>
                             <h4 class="font-bold text-lg mb-2">2. 葉であおいで温める施術（ウィスキング）</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">葉の香り、蒸気、肌への触れ方。熱さが苦しくならないように調整しながら、静かに集中できる時間をつくります。初心者でも不安が出ないよう、入り口の説明は短くします。</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                葉の香り、蒸気、肌への触れ方。熱さが苦しくならないように調整しながら、静かに集中できる時間をつくります。初心者でも不安が出ないよう、入り口の説明は短くします。</p>
                         </div>
                     </div>
                     <!-- Step 3 -->
@@ -292,7 +329,8 @@
                         <div>
                             <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">サービスの核：迷わなくていい時間</p>
                             <h4 class="font-bold text-lg mb-2">3. 迷わせない「つきっきりの案内」</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">選ぶ場面を増やしません。体調や表情を見ながら、温度・時間・休憩をその場で調整します。お客様は、体の感覚に集中して過ごしてください。</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                選ぶ場面を増やしません。体調や表情を見ながら、温度・時間・休憩をその場で調整します。お客様は、体の感覚に集中して過ごしてください。</p>
                         </div>
                     </div>
                 </div>
@@ -393,28 +431,36 @@
             <div class="space-y-8 max-w-lg mx-auto border-l border-gray-700 pl-8 relative">
                 <!-- Item 1 -->
                 <div class="relative group">
-                    <div class="absolute -left-[39px] bg-[#d4af37] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <div
+                        class="absolute -left-[39px] bg-[#d4af37] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform">
+                    </div>
                     <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-1">START</p>
                     <p class="font-bold text-lg">集合・お迎え</p>
                     <p class="text-sm text-gray-300 leading-relaxed mt-1">駅／宿まで。ここから先は、任せてください。</p>
                 </div>
                 <!-- Item 2 -->
                 <div class="relative group">
-                    <div class="absolute -left-[39px] bg-gray-600 w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <div
+                        class="absolute -left-[39px] bg-gray-600 w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform">
+                    </div>
                     <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-1">NUKARITUAL</p>
                     <p class="font-bold text-lg">温浴フルコース（約3.0〜3.5h）</p>
                     <p class="text-sm text-gray-300 leading-relaxed mt-1">酵素→休憩→ウィスキング→クールダウン。体調で微調整。</p>
                 </div>
                 <!-- Item 3 -->
                 <div class="relative group">
-                    <div class="absolute -left-[39px] bg-[#b93a2b] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <div
+                        class="absolute -left-[39px] bg-[#b93a2b] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform">
+                    </div>
                     <p class="text-[#b93a2b] text-xs font-bold tracking-widest mb-1">CRAB</p>
                     <p class="font-bold text-lg">茹でたて蟹（約2.0h）</p>
                     <p class="text-sm text-gray-300 leading-relaxed mt-1">整えた状態で、無心で味わいきる。</p>
                 </div>
                 <!-- Item 4 -->
                 <div class="relative group">
-                    <div class="absolute -left-[39px] bg-[#d4af37] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform"></div>
+                    <div
+                        class="absolute -left-[39px] bg-[#d4af37] w-3 h-3 rounded-full mt-1.5 ring-4 ring-[#1a1a1a] group-hover:scale-125 transition-transform">
+                    </div>
                     <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-1">GOAL</p>
                     <p class="font-bold text-lg">希望場所へお送り</p>
                     <p class="text-sm text-gray-300 leading-relaxed mt-1">宿／駅へ。お酒を飲んでもOK。</p>
@@ -446,35 +492,40 @@
                             <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
                             「ヌカリチュアル」ってスピリチュアルな儀式？
                         </p>
-                        <p class="text-sm text-gray-600 leading-relaxed">違います。温度、休憩、香り、触れ方を組み合わせて、気持ちよさが続くように組み立てた温浴コースです。</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            違います。温度、休憩、香り、触れ方を組み合わせて、気持ちよさが続くように組み立てた温浴コースです。</p>
                     </div>
                     <div class="p-6 md:p-7">
                         <p class="font-bold text-gray-900 mb-2 flex items-start gap-2">
                             <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
                             サウナ初心者でも大丈夫？
                         </p>
-                        <p class="text-sm text-gray-600 leading-relaxed">大丈夫です。最初に短く流れを共有し、不安が出やすいポイント（水風呂・暗さ・熱さ等）は先回りして調整します。</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            大丈夫です。最初に短く流れを共有し、不安が出やすいポイント（水風呂・暗さ・熱さ等）は先回りして調整します。</p>
                     </div>
                     <div class="p-6 md:p-7">
                         <p class="font-bold text-gray-900 mb-2 flex items-start gap-2">
                             <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
                             水着や持ち物は？
                         </p>
-                        <p class="text-sm text-gray-600 leading-relaxed">基本は手ぶらで大丈夫です（必要なら事前に案内します）。気になることがあれば、タオルの肌触りやコンタクトなど、ひとことだけ教えてください。</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            基本は手ぶらで大丈夫です（必要なら事前に案内します）。気になることがあれば、タオルの肌触りやコンタクトなど、ひとことだけ教えてください。</p>
                     </div>
                     <div class="p-6 md:p-7">
                         <p class="font-bold text-gray-900 mb-2 flex items-start gap-2">
                             <span class="mt-0.5 text-[#d4af37]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
                             医療的な効果を保証するもの？
                         </p>
-                        <p class="text-sm text-gray-600 leading-relaxed">医療行為ではありません。体調に不安がある場合は、事前に相談いただいた上で“無理のない設計”に調整します。</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            医療行為ではありません。体調に不安がある場合は、事前に相談いただいた上で“無理のない設計”に調整します。</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
-        <section id="reservation" class="bg-white border border-gray-200 p-8 md:p-12 rounded-2xl text-center shadow-lg relative overflow-hidden">
+        <section id="reservation"
+            class="bg-white border border-gray-200 p-8 md:p-12 rounded-2xl text-center shadow-lg relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-2 bg-[#d4af37]"></div>
 
             <div class="max-w-xl mx-auto relative z-10">
@@ -486,14 +537,17 @@
                 </p>
 
                 <!-- Copy Box -->
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8 text-left relative group hover:border-[#d4af37]/50 transition-colors">
-                    <button onclick="handleCopy()" class="absolute top-4 right-4 flex items-center gap-2 bg-white border border-gray-200 hover:border-[#d4af37] text-gray-700 text-xs px-3 py-2 rounded-lg transition-all shadow-sm active:scale-95">
+                <div
+                    class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8 text-left relative group hover:border-[#d4af37]/50 transition-colors">
+                    <button onclick="handleCopy()"
+                        class="absolute top-4 right-4 flex items-center gap-2 bg-white border border-gray-200 hover:border-[#d4af37] text-gray-700 text-xs px-3 py-2 rounded-lg transition-all shadow-sm active:scale-95">
                         <i data-lucide="copy" class="w-3.5 h-3.5" id="copy-icon"></i>
                         <span id="copy-text">コピーする</span>
                     </button>
 
                     <p class="text-[10px] text-gray-400 mb-3 font-bold tracking-widest uppercase">LINE Template</p>
-                    <pre id="reservation-template" class="text-sm font-mono text-gray-600 whitespace-pre-wrap leading-relaxed select-all">【蟹×NUKARITUAL 申込み／相談】
+                    <pre id="reservation-template"
+                        class="text-sm font-mono text-gray-600 whitespace-pre-wrap leading-relaxed select-all">【蟹×NUKARITUAL 申込み／相談】
 
 紹介者（いる場合）：
 人数：
@@ -505,7 +559,8 @@
 
 ※日程が決まった後、3分ほどの事前アンケートをお送りします。体調と好みに合わせて、当日の流れを整えます。</pre>
 
-                    <div class="mt-4 bg-white border border-gray-200 rounded-lg p-3 text-xs text-gray-600 leading-relaxed">
+                    <div
+                        class="mt-4 bg-white border border-gray-200 rounded-lg p-3 text-xs text-gray-600 leading-relaxed">
                         <div class="flex items-start gap-2">
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5 mt-0.5 text-gray-500"></i>
                             <p>
@@ -519,12 +574,14 @@
 
                 <div class="flex flex-col gap-4">
                     <!-- ※ここは相棒の公式LINEのURLに差し替えてください -->
-                    <a href="https://line.me/" target="_blank" rel="noreferrer" class="block w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-100 flex items-center justify-center gap-2 transform hover:-translate-y-1 decoration-0">
+                    <a href="https://line.me/" target="_blank" rel="noreferrer"
+                        class="block w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-100 flex items-center justify-center gap-2 transform hover:-translate-y-1 decoration-0">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
                         カジにLINEで相談する
                     </a>
 
-                    <button onclick="handleShare()" class="block w-full bg-white border border-gray-300 hover:border-[#d4af37] text-gray-900 font-bold py-4 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
+                    <button onclick="handleShare()"
+                        class="block w-full bg-white border border-gray-300 hover:border-[#d4af37] text-gray-900 font-bold py-4 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
                         <i data-lucide="share-2" class="w-5 h-5" id="share-icon"></i>
                         <span id="share-text">このプランを共有する</span>
                     </button>
@@ -580,18 +637,18 @@
             const titleEl = document.getElementById('persona-title');
             const leadEl = document.getElementById('persona-lead');
             const bulletsEl = document.getElementById('persona-bullets');
-            
+
             // Text Update with fade effect
             titleEl.classList.remove('fade-in');
             leadEl.classList.remove('fade-in');
             bulletsEl.classList.remove('fade-in');
-            
+
             // Trigger reflow
             void titleEl.offsetWidth;
 
             titleEl.textContent = data.title;
             leadEl.textContent = data.lead;
-            
+
             // Generate Bullets HTML
             bulletsEl.innerHTML = data.bullets.map(b => `
                 <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-700">
@@ -656,8 +713,8 @@
                 btnText.classList.add('text-green-600');
                 // Replace icon with Check temporarily (need to manage SVG manually here since lucide.createIcons is static)
                 icon.setAttribute('data-lucide', 'check');
-                lucide.createIcons(); 
-                
+                lucide.createIcons();
+
                 setTimeout(() => {
                     btnText.innerText = originalText;
                     btnText.classList.remove('text-green-600');
@@ -696,7 +753,7 @@
 
                 // Feedback (Update both buttons if they exist)
                 const showFeedback = (el, original) => {
-                    if(!el) return;
+                    if (!el) return;
                     el.innerText = 'URLコピーしました';
                     setTimeout(() => {
                         el.innerText = original;
@@ -712,4 +769,5 @@
         }
     </script>
 </body>
+
 </html>
