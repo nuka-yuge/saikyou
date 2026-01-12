@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>蟹×NUKARITUAL｜京丹後 1日1組・招待制プラン</title>
     <meta name="description" content="京丹後で、蟹を迎える体を整える。温浴を順番のあるコースとして組み立て、最後は茹でたての蟹へ。1日1組の招待制プラン。">
+    <meta property="og:title" content="蟹×NUKARITUAL｜京丹後 1日1組・招待制プラン">
+    <meta property="og:description" content="温浴を“アラカルト”ではなく「順番のあるコース」として組み立て、そのまま「茹でたての蟹」へ。1日1組の招待制プラン。">
+    <meta property="og:image" content="https://nuka-yuge.github.io/test/assets/hero.png">
+    <meta property="og:url" content="https://nuka-yuge.github.io/test/">
+    <meta property="og:type" content="website">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -170,21 +175,16 @@
     <main class="max-w-3xl mx-auto px-4 pb-20">
         <!-- Hero Image Area -->
         <div class="w-full aspect-video bg-gray-200 rounded-lg mb-10 overflow-hidden relative group shadow-xl">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 md:p-10 z-10">
+            <img src="assets/hero.png" alt="NUKARITUAL Atmosphere"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6 md:p-10 z-10">
                 <div>
                     <p class="text-[#d4af37] text-xs font-bold tracking-widest mb-2">THE CONCEPT</p>
-                    <p class="text-white font-serif text-lg md:text-2xl leading-relaxed">
+                    <p class="text-white font-serif text-lg md:text-2xl leading-relaxed text-shadow-sm">
                         迷わなくていいように、<br />
                         いちばんおいしい瞬間までご案内します。
                     </p>
-                </div>
-            </div>
-
-            <!-- Placeholder Visual -->
-            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
-                <div class="text-center text-gray-600">
-                    <i data-lucide="sparkles" class="w-12 h-12 mx-auto mb-2 opacity-50"></i>
-                    <span class="text-xs tracking-widest">[Image: ぬか×蒸気×海の気配]</span>
                 </div>
             </div>
         </div>
@@ -291,9 +291,14 @@
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                <div class="bg-[#1a1a1a] p-6 text-white text-center">
-                    <h3 class="font-serif text-xl text-[#d4af37] mb-2">The Full Course</h3>
-                    <p class="text-xs text-gray-400 tracking-widest">“なぜ今これをするか”を、短く添えます</p>
+                <div class="relative bg-[#1a1a1a] p-10 text-white text-center overflow-hidden group">
+                    <img src="assets/sauna.png" alt="Sauna"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-[#1a1a1a]/90"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-serif text-xl text-[#d4af37] mb-2">The Full Course</h3>
+                        <p class="text-xs text-gray-300 tracking-widest">“なぜ今これをするか”を、短く添えます</p>
+                    </div>
                 </div>
 
                 <div class="divide-y divide-gray-100">
@@ -353,8 +358,16 @@
                 <h2 class="text-2xl font-bold pt-4 relative z-10">いちばんおいしい状態で蟹を出します</h2>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-[#b93a2b]/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <div
+                class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden group">
+                <div class="w-full h-48 md:h-64 rounded-xl overflow-hidden mb-6 relative shadow-md">
+                    <img src="assets/crab.png" alt="Fresh Crab"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-[#b93a2b]/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none">
+                </div>
 
                 <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
                     <span class="w-1.5 h-6 bg-[#b93a2b] rounded-full"></span>
