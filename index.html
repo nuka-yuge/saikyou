@@ -8,14 +8,25 @@
     <meta name="description" content="京丹後で、蟹を迎える体を整える。温浴を順番のあるコースとして組み立て、最後は茹でたての蟹へ。1日1組の招待制プラン。">
     <meta property="og:title" content="蟹×NUKARITUAL｜京丹後 1日1組・招待制プラン">
     <meta property="og:description" content="温浴を“アラカルト”ではなく「順番のあるコース」として組み立て、そのまま「茹でたての蟹」へ。1日1組の招待制プラン。">
-    <meta property="og:image" content="https://nuka-yuge.github.io/test/assets/hero.png">
+    <!-- TODO: og:url / og:image は本番URLに差し替えてください -->
+    <meta property="og:image" content="https://nuka-yuge.github.io/test/assets/hero.jpg">
     <meta property="og:url" content="https://nuka-yuge.github.io/test/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="NUKARITUAL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="蟹×NUKARITUAL｜京丹後 1日1組・招待制プラン">
+    <meta name="twitter:description" content="温浴を“アラカルト”ではなく「順番のあるコース」として組み立て、そのまま「茹でたての蟹」へ。1日1組の招待制プラン。">
+    <meta name="twitter:image" content="https://nuka-yuge.github.io/test/assets/hero.jpg">
+    <meta name="theme-color" content="#d4af37">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Klee+One:wght@400;600&display=swap">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
-
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #f9f9f9;
@@ -24,6 +35,10 @@
 
         .font-serif {
             font-family: 'Noto Serif JP', serif;
+        }
+
+        .font-handwritten {
+            font-family: 'Klee One', cursive;
         }
 
         ::selection {
@@ -80,7 +95,7 @@
     <nav
         class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-4 py-3 flex justify-between items-center transition-all shadow-sm">
         <div class="font-serif font-bold tracking-wider text-sm md:text-base text-[#d4af37]">
-            KAJI'S INVITATION
+            特別な招待
         </div>
 
         <div class="flex items-center gap-2">
@@ -122,6 +137,17 @@
             <br class="hidden md:block" />
             気持ちよさが上がっていく流れを、最後までつなげます。
         </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+            <button onclick="safeScrollTo('reservation')"
+                class="bg-black text-white text-sm px-6 py-3 rounded-full font-bold hover:bg-[#333] transition-colors shadow-lg">
+                LINEで相談する
+            </button>
+            <button onclick="safeScrollTo('schedule')"
+                class="bg-white text-gray-900 text-sm px-6 py-3 rounded-full font-bold border border-gray-300 hover:border-[#d4af37] transition-colors shadow-sm">
+                当日の流れを見る
+            </button>
+        </div>
 
         <!-- Quick Facts -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
@@ -175,7 +201,8 @@
     <main class="max-w-3xl mx-auto px-4 pb-20">
         <!-- Hero Image Area -->
         <div class="w-full aspect-video bg-gray-200 rounded-lg mb-10 overflow-hidden relative group shadow-xl">
-            <img src="assets/hero.png" alt="NUKARITUAL Atmosphere"
+            <img src="assets/hero_pro.png" alt="温浴フルコース『NUKARITUAL』の雰囲気" loading="eager" decoding="async"
+                fetchpriority="high" width="1024" height="1024"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6 md:p-10 z-10">
@@ -188,6 +215,118 @@
                 </div>
             </div>
         </div>
+
+        <!-- Kaji's Message (New Section) -->
+        <section class="mb-12">
+            <div
+                class="bg-gradient-to-br from-[#fffef0] to-white border-2 border-[#d4af37]/30 rounded-2xl p-6 md:p-8 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/5 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10">
+                    <p class="text-[10px] font-bold tracking-widest text-[#d4af37] mb-4">FROM KAJI</p>
+
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <!-- Kaji's Photo -->
+                        <div
+                            class="w-32 h-32 shrink-0 rounded-2xl overflow-hidden border-2 border-[#d4af37]/30 shadow-lg">
+                            <img src="assets/カジの顔写真_蟹背景.png" alt="梶祐樹（カジ）" class="w-full h-full object-cover">
+                        </div>
+
+                        <div class="flex-1">
+                            <div class="font-handwritten text-lg md:text-xl text-gray-800 leading-relaxed mb-6"
+                                style="transform: rotate(-0.5deg);">
+                                <p class="mb-4">
+                                    最高の温浴体験と自負しているヌカリチュアル。
+                                </p>
+                                <p class="mb-4">
+                                    これに丹後の蟹の体験もくっつけたら<b>最強</b>になるんじゃないか、と思い作りました。
+                                </p>
+                                <p class="text-base text-right text-gray-600 mt-6">
+                                    — カジ
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Reviews (New Section) -->
+        <section class="mb-16">
+            <div class="text-center mb-8">
+                <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">VOICES</p>
+                <h2 class="text-xl md:text-2xl font-bold font-serif">ヌカリチュアル体験者の声</h2>
+                <p class="text-xs text-gray-500 mt-2">（蟹との組み合わせ前の、温浴のみの体験談です）</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Voice 1: 三村さん -->
+                <div
+                    class="bg-gradient-to-br from-white to-gray-50 border-l-4 border-[#d4af37] rounded-xl p-6 shadow-sm">
+                    <p class="text-gray-700 leading-relaxed mb-4 italic">
+                        「<b>まるでフレンチのコースのような素晴らしい温浴体験</b>でした。ウィスキング中の説明に価値を感じており、
+                        <b>5万円の中の3万円くらいは、そういうもの（説明など）に価値がある</b>と感じました。」
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-[#d4af37]/20 rounded-full flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5 text-[#d4af37]"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">三村浩一さん</p>
+                            <p class="text-xs text-gray-500">岡山でサウナ施設「コルメキュラ」経営（サウナシュラン受賞予定）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice 2: 中井さん -->
+                <div
+                    class="bg-gradient-to-br from-white to-gray-50 border-l-4 border-[#b93a2b] rounded-xl p-6 shadow-sm">
+                    <p class="text-gray-700 leading-relaxed mb-4 italic">
+                        「酵素風呂20分体験後『<b>これは体にいいよね</b>』と実感。米ぬかの循環の話、発酵のメカニズム、
+                        <b>知れば知るほど楽しい</b>。ウィスキング後の水風呂で『<b>最高</b>』。
+                        <b>サウナは汗かきにいくものだと思ってたのが、楽しむってカタチにかわりました</b>。
+                        いつもより寝れました。悪い物流れました。」
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-[#b93a2b]/20 rounded-full flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5 text-[#b93a2b]"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">中井満さん</p>
+                            <p class="text-xs text-gray-500">丹後・蟹マックス経営</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice 3: 松本さん -->
+                <div
+                    class="bg-gradient-to-br from-white to-gray-50 border-l-4 border-green-500 rounded-xl p-6 shadow-sm">
+                    <p class="text-gray-700 leading-relaxed mb-4 italic">
+                        「ウィスキング後の水風呂で『<b>前回よりキマッた。やばいっすね</b>』『<b>過去一ととのった</b>』。
+                        おはようございます！昨日はありがとうございました！
+                        <b>おかげさまで10時間死んだように熟睡できました！</b>」
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                            <i data-lucide="user" class="w-5 h-5 text-green-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">松本聖那さん</p>
+                            <p class="text-xs text-gray-500">リピーター（2回目体験後のコメント）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-[#fffef0] border border-[#f0d7a5] rounded-xl p-4 text-sm text-[#6b4e16]">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="info" class="w-4 h-4 mt-0.5 shrink-0"></i>
+                    <p class="leading-relaxed">
+                        <b>正直に言うと：</b>これらは「ヌカリチュアル（温浴のみ）」の体験談です。温浴だけでもこんな反応でした。蟹と組み合わせたら、さらに...と期待しています。効果には個人差があります。
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <!-- Persona Switch -->
         <section class="mb-12">
@@ -293,8 +432,9 @@
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                 <div
                     class="relative bg-[#1a1a1a] h-64 text-white text-center overflow-hidden group flex items-center justify-center">
-                    <img src="assets/course_collage.jpg" alt="NUKA Re-tual Course"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <img src="assets/course_collage.jpg" alt="NUKARITUALのコース（酵素風呂・休憩・ウィスキング）" loading="lazy"
+                        decoding="async" width="1024" height="686"
+                        class="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/40"></div>
                     <div class="relative z-10 px-4">
                         <p
@@ -313,8 +453,30 @@
                         <div>
                             <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">前菜：体の土台を作る</p>
                             <h4 class="font-bold text-lg mb-2">1. 芯まで熱を入れる「酵素風呂」</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                サウナの熱とは質が違います。発酵の熱で、体の奥までじんわり温めます。ここで土台ができると、後半の体感が変わります。</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                                サウナの熱とは質が違います。発酵の熱で、体の奥までじんわり温めます。ここで土台ができると、後半の体感が変わります。
+                            </p>
+                            <!-- 酵素風呂の写真追加 -->
+                            <div class="mb-4 rounded-lg overflow-hidden shadow-md">
+                                <img src="assets/酵素風呂に埋まっている写真.PNG" alt="酵素風呂に埋まっている様子"
+                                    class="w-full h-48 object-cover">
+                            </div>
+
+                            <div
+                                class="bg-[#fffef0] border border-[#f0d7a5] rounded-lg p-3 text-xs text-[#6b4e16] leading-relaxed">
+                                <p class="font-bold mb-1 flex items-center gap-1">
+                                    <i data-lucide="book-open" class="w-3 h-3"></i>
+                                    背景ストーリー
+                                </p>
+                                <p>
+                                    この米ぬかは、<b>淡路島の酵素風呂から"種ぬか"をもらい、丹後の湿度と気候で3年かけて育てました</b>。
+                                    毎日トラクターでかき混ぜ、菌を生かし続けています。
+                                    触感が場所によって違うのは、丹後の風土が関係しています。
+                                    <br>
+                                    <span
+                                        class="text-[10px] text-gray-500 mt-1 inline-block">※この話は、体験中にゆっくりお伝えします</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- Step 2 -->
@@ -325,8 +487,36 @@
                         <div>
                             <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">メイン：集中して、静かになる</p>
                             <h4 class="font-bold text-lg mb-2">2. 葉であおいで温める施術（ウィスキング）</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                葉の香り、蒸気、肌への触れ方。熱さが苦しくならないように調整しながら、静かに集中できる時間をつくります。初心者でも不安が出ないよう、入り口の説明は短くします。</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                                葉の香り、蒸気、肌への触れ方。熱さが苦しくならないように調整しながら、静かに集中できる時間をつくります。初心者でも不安が出ないよう、入り口の説明は短くします。
+                            </p>
+
+                            <!-- ウィスキングの葉の写真追加 -->
+                            <div class="grid grid-cols-2 gap-3 mb-4">
+                                <div class="rounded-lg overflow-hidden shadow-md">
+                                    <img src="assets/ウィスキング用の葉っぱ写真.jpg" alt="ウィスキング用の丹後産の葉"
+                                        class="w-full h-32 object-cover">
+                                </div>
+                                <div class="rounded-lg overflow-hidden shadow-md">
+                                    <img src="assets/ウィスキング中の写真.png" alt="ウィスキング施術中" class="w-full h-32 object-cover">
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-green-50 border border-green-200 rounded-lg p-3 text-xs text-green-900 leading-relaxed">
+                                <p class="font-bold mb-1 flex items-center gap-1">
+                                    <i data-lucide="leaf" class="w-3 h-3"></i>
+                                    背景ストーリー
+                                </p>
+                                <p>
+                                    ウィスキングの葉（<b>杉、松、白樺</b>）は<b>すべて丹後産</b>です。
+                                    朝摘みたての葉を使い、それぞれの香りと効能を短く添えながら施術します。
+                                    地産地消へのこだわりと、この土地でしか体験できない香りを大切にしています。
+                                    <br>
+                                    <span
+                                        class="text-[10px] text-green-700 mt-1 inline-block">※「十勝でウィスキング受けたことあるが、地産地消はここが初めて」（木下斉氏）</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- Step 3 -->
@@ -337,8 +527,22 @@
                         <div>
                             <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">サービスの核：迷わなくていい時間</p>
                             <h4 class="font-bold text-lg mb-2">3. 迷わせない「つきっきりの案内」</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                選ぶ場面を増やしません。体調や表情を見ながら、温度・時間・休憩をその場で調整します。お客様は、体の感覚に集中して過ごしてください。</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                                選ぶ場面を増やしません。体調や表情を見ながら、温度・時間・休憩をその場で調整します。お客様は、体の感覚に集中して過ごしてください。
+                            </p>
+
+                            <!-- 休憩中の写真追加 -->
+                            <div class="grid grid-cols-3 gap-2 mb-3">
+                                <div class="rounded-lg overflow-hidden shadow-sm">
+                                    <img src="assets/休憩中のドリンク.jpg" alt="休憩中のドリンク" class="w-full h-24 object-cover">
+                                </div>
+                                <div class="rounded-lg overflow-hidden shadow-sm">
+                                    <img src="assets/休憩中の軽食.png" alt="休憩中の軽食" class="w-full h-24 object-cover">
+                                </div>
+                                <div class="rounded-lg overflow-hidden shadow-sm">
+                                    <img src="assets/外気浴スペース.jpg" alt="外気浴スペース" class="w-full h-24 object-cover">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -364,7 +568,8 @@
             <div
                 class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden group">
                 <div class="w-full h-48 md:h-64 rounded-xl overflow-hidden mb-6 relative shadow-md">
-                    <img src="assets/crab.png" alt="Fresh Crab"
+                    <img src="assets/crab.jpg" alt="京丹後 魚政の茹でたて蟹 – 整えた状態で味わう" loading="lazy" decoding="async"
+                        width="1024" height="1024"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
 
@@ -390,11 +595,143 @@
                     整えた状態で、いちばんおいしく感じる瞬間を用意しておきます。
                 </p>
 
+                <!-- Uomasa Details (New) -->
+                <div class="bg-[#fff9f5] border-2 border-[#b93a2b]/20 rounded-xl p-5 mb-6">
+                    <h4 class="font-bold text-base mb-3 flex items-center gap-2">
+                        <i data-lucide="store" class="w-4 h-4 text-[#b93a2b]"></i>
+                        魚政（うおまさ）とは
+                    </h4>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        <b>京都府京丹後市網野で創業50年</b>。地元の漁港から直接仕入れた<b>ズワイガニ（松葉ガニ）</b>を、
+                        茹でたてで提供できる数少ない老舗です。
+                    </p>
+
+                    <!-- 魚政・かにべんの写真追加 -->
+                    <div class="rounded-lg overflow-hidden mb-4 shadow-md">
+                        <img src="assets/魚政・かにべんの写真.jpg" alt="魚政・かにべん" class="w-full h-48 object-cover">
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 mb-4">
+                        <p class="font-bold text-sm mb-2 text-[#b93a2b]">「かにべん」という特別な場所</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            魚政には<b>「かにべん」</b>という、通常の食堂とは違う体験スペースがあります。
+                            倉庫のような場所で、<b>茹でたてをその場で、自分で割って味わう</b>スタイル。
+                            <br><br>
+                            約20名まで入れ、<b>予約必須（前日まで）</b>。カニの用意と茹でるタイミングがあるため、
+                            ヌカリチュアルの終了時刻に合わせて茹でてもらえます。
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-3 text-xs">
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-[#b93a2b] shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700"><b>時価制</b>：その日の状態で最良のものを（12月年末は2万円以上から）</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-[#b93a2b] shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700"><b>地産地消</b>：丹後の漁港から直接仕入れ</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-[#b93a2b] shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700"><b>茹でたて</b>：温浴の終了時刻に合わせて茹でる</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-[#b93a2b] shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700"><b>特別な空間</b>：「かにべん」は通常の食堂と違う体験</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why Uomasa (New) -->
+                <div class="bg-white border-l-4 border-[#b93a2b] rounded-r-xl p-4 mb-6">
+                    <p class="font-bold text-sm mb-2">カジが魚政を選んだ理由</p>
+                    <ul class="text-xs text-gray-600 leading-relaxed space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#b93a2b] font-bold">•</span>
+                            <span><b>温浴の終了時刻に合わせて茹でてくれる</b>（いちばんいいタイミングで出せる）</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#b93a2b] font-bold">•</span>
+                            <span><b>地産地消へのこだわり</b>（ヌカリチュアルと同じ哲学）</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#b93a2b] font-bold">•</span>
+                            <span><b>カジ自身が何度も通って信頼している</b>（味も、タイミングも）</span>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="bg-[#b93a2b]/5 border border-[#b93a2b]/20 p-4 rounded-lg flex items-center gap-3">
                     <i data-lucide="utensils-crossed" class="w-4 h-4 text-[#b93a2b]"></i>
                     <p class="text-xs font-bold text-[#b93a2b]">
                         ゴールは「満腹」ではなく、「最高の状態で味わいきる」こと。
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Crab × Onsen (New Section) -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-[#b93a2b] font-bold text-6xl font-serif opacity-20 -mr-6 select-none">※</span>
+                <h2 class="text-2xl font-bold pt-4 relative z-10">なぜ、蟹の「前」に温浴なのか</h2>
+            </div>
+
+            <div
+                class="bg-gradient-to-br from-white to-[#b93a2b]/5 border border-[#b93a2b]/20 rounded-2xl p-6 md:p-8 shadow-sm">
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    「温浴のあと、<b>味や香りがはっきり感じた</b>」という方が、実際にいます。
+                    これは偶然ではなく、体のメカニズムとして説明できます。
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-white border border-gray-200 rounded-xl p-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mb-3">
+                            <i data-lucide="activity" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-2">血流が良くなる</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            温浴で全身の血流が改善 → <b>舌の味蕾が敏感</b>に → 味・温度・食感をより繊細に感じられる
+                        </p>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-xl p-4">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-3">
+                            <i data-lucide="brain" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-2">副交感神経優位</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            リラックス状態で味わえる → <b>「ゆっくり、じっくり」</b>食事に集中できる → 満足度が上がる
+                        </p>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-xl p-4">
+                        <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-3">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-2">五感が研ぎ澄まされる</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            温浴で<b>香り・食感・温度を繊細に感じる</b>状態に → 蟹の甘み・旨みを最大限に味わえる
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white border-l-4 border-[#b93a2b] rounded-r-xl p-4">
+                    <p class="text-sm text-gray-700 leading-relaxed italic mb-2">
+                        「美味しいものを食べる前に、<b>体を最高の状態に整える</b>。
+                        ピークに向けてのレールに乗りたかった」
+                    </p>
+                    <p class="text-xs text-gray-500">— 小田大輔さん（木下斉氏の狂犬ツアーメンバー）</p>
+                </div>
+
+                <div class="mt-6 bg-[#b93a2b]/10 border border-[#b93a2b]/30 rounded-xl p-4 text-sm text-[#6b3020]">
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="utensils-crossed" class="w-4 h-4 mt-0.5 shrink-0"></i>
+                        <p class="leading-relaxed">
+                            <b>結論：</b>単なる「豪華なセット」ではありません。
+                            <b>科学的・体感的に、蟹を一番おいしく食べるための順番</b>です。
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -425,13 +762,28 @@
                         <h4 class="font-bold mb-2 flex items-center gap-2">
                             <i data-lucide="japanese-yen" class="w-4 h-4"></i> 料金について
                         </h4>
-                        <p class="text-gray-600 mb-2">
+                        <p class="text-gray-600 mb-3">
                             <span class="text-2xl font-bold font-serif">75,000</span> 円 / 人
                         </p>
+
+                        <div class="bg-gray-50 rounded-lg p-3 mb-3 text-xs text-gray-600 space-y-1">
+                            <div class="flex justify-between">
+                                <span>温浴プログラム（フルアテンド付き）</span>
+                                <span class="font-bold">45,000円</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>魚政の蟹（茹でたて・厳選）</span>
+                                <span class="font-bold">20,000円</span>
+                            </div>
+                            <div class="flex justify-between border-t border-gray-200 pt-1">
+                                <span>送迎・ストーリー案内</span>
+                                <span class="font-bold">10,000円</span>
+                            </div>
+                        </div>
+
                         <p class="text-xs text-gray-500 leading-relaxed">
-                            温浴コース／蟹／移動／案内込み。
-                            <br />
                             「説明も価値」になるタイプの方には、コース料理のように短く添えていきます。
+                            不要な方には省きます（事前に教えてください）。
                         </p>
                     </div>
                 </div>
@@ -439,7 +791,7 @@
         </section>
 
         <!-- Schedule -->
-        <div class="bg-[#1a1a1a] text-white p-8 rounded-2xl mb-16 shadow-2xl relative overflow-hidden">
+        <div id="schedule" class="bg-[#1a1a1a] text-white p-8 rounded-2xl mb-16 shadow-2xl relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4af37] to-[#b93a2b]"></div>
 
             <h3 class="text-center font-serif text-lg md:text-xl mb-8 tracking-widest">THE SCHEDULE</h3>
@@ -589,9 +941,10 @@
                 </div>
 
                 <div class="flex flex-col gap-4">
-                    <!-- ※ここは相棒の公式LINEのURLに差し替えてください -->
-                    <a href="https://line.me/" target="_blank" rel="noreferrer"
-                        class="block w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-100 flex items-center justify-center gap-2 transform hover:-translate-y-1 decoration-0">
+                    <!-- TODO: 公式LINEのURLに差し替えてください（例: https://lin.ee/xxxxxx） -->
+                    <a href="https://line.me/" target="_blank" rel="noopener noreferrer"
+                        class="block w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-100 flex items-center justify-center gap-2 transform hover:-translate-y-1 decoration-0"
+                        id="cta-line-btn">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
                         カジにLINEで相談する
                     </a>
