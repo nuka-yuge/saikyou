@@ -86,6 +86,28 @@
                 transform: translateY(0);
             }
         }
+
+        /* 画像トーン統一用 */
+        .unified-image {
+            filter: brightness(0.92) contrast(1.05);
+            /* 少し暗めにしてコントラストを強調 */
+            mix-blend-mode: multiply;
+            /* 背景となじませる（適宜調整） */
+            mix-blend-mode: normal;
+        }
+
+        .img-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.1));
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -241,10 +263,11 @@
     <!-- Main Content -->
     <main class="max-w-3xl mx-auto px-4 pb-20">
         <!-- Hero Image Area -->
-        <div class="w-full aspect-video bg-gray-200 rounded-lg mb-10 overflow-hidden relative group shadow-xl">
+        <div
+            class="w-full aspect-video bg-gray-200 rounded-lg mb-10 overflow-hidden relative group shadow-xl img-container">
             <img src="assets/hero_pro.png" alt="温浴フルコース『NUKARITUAL』の雰囲気" loading="eager" decoding="async"
                 fetchpriority="high" width="1024" height="1024"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 unified-image">
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6 md:p-10 z-10">
                 <div>
@@ -270,7 +293,8 @@
                         <!-- Kaji's Photo -->
                         <div
                             class="w-32 h-32 shrink-0 rounded-2xl overflow-hidden border-2 border-[#d4af37]/30 shadow-lg">
-                            <img src="assets/カジの顔写真_蟹背景.png" alt="梶祐樹（カジ）" class="w-full h-full object-cover">
+                            <img src="assets/カジの顔写真_蟹背景.png" alt="梶祐樹（カジ）"
+                                class="w-full h-full object-cover unified-image">
                         </div>
 
                         <div class="flex-1">
@@ -312,8 +336,8 @@
                             <i data-lucide="user" class="w-5 h-5 text-[#d4af37]"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-sm">三村浩一さん</p>
-                            <p class="text-xs text-gray-500">岡山でサウナ施設「コルメキュラ」経営（サウナシュラン受賞予定）</p>
+                            <p class="font-bold text-sm">M様</p>
+                            <p class="text-xs text-gray-500">岡山・サウナ施設経営者（サウナシュラン選出施設）</p>
                         </div>
                     </div>
                 </div>
@@ -332,8 +356,8 @@
                             <i data-lucide="user" class="w-5 h-5 text-[#b93a2b]"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-sm">中井満さん</p>
-                            <p class="text-xs text-gray-500">丹後・蟹マックス経営</p>
+                            <p class="font-bold text-sm">N様</p>
+                            <p class="text-xs text-gray-500">丹後・飲食店経営者</p>
                         </div>
                     </div>
                 </div>
@@ -351,8 +375,8 @@
                             <i data-lucide="user" class="w-5 h-5 text-green-600"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-sm">松本聖那さん</p>
-                            <p class="text-xs text-gray-500">リピーター（2回目体験後のコメント）</p>
+                            <p class="font-bold text-sm">M様</p>
+                            <p class="text-xs text-gray-500">リピーター（IT関連・30代）</p>
                         </div>
                     </div>
                 </div>
@@ -504,9 +528,9 @@
                                 サウナの熱とは質が違います。発酵の熱で、体の奥までじんわり温めます。ここで土台ができると、後半の体感が変わります。
                             </p>
                             <!-- 酵素風呂の写真追加 -->
-                            <div class="mb-4 rounded-lg overflow-hidden shadow-md">
-                                <img src="assets/酵素風呂に埋まっている写真.PNG" alt="酵素風呂に埋まっている様子"
-                                    class="w-full h-48 object-cover">
+                            <div class="mb-4 rounded-lg overflow-hidden shadow-md img-container">
+                                <img src="assets/酵素風呂に埋まっている写真.PNG" alt="助走風呂に埋まっている様子"
+                                    class="w-full h-48 object-cover unified-image">
                             </div>
 
                             <div
@@ -540,12 +564,13 @@
 
                             <!-- ウィスキングの葉の写真追加 -->
                             <div class="grid grid-cols-2 gap-3 mb-4">
-                                <div class="rounded-lg overflow-hidden shadow-md">
+                                <div class="rounded-lg overflow-hidden shadow-md img-container">
                                     <img src="assets/ウィスキング用の葉っぱ写真.jpg" alt="ウィスキング用の丹後産の葉"
-                                        class="w-full h-32 object-cover">
+                                        class="w-full h-32 object-cover unified-image">
                                 </div>
-                                <div class="rounded-lg overflow-hidden shadow-md">
-                                    <img src="assets/ウィスキング中の写真.png" alt="ウィスキング施術中" class="w-full h-32 object-cover">
+                                <div class="rounded-lg overflow-hidden shadow-md img-container">
+                                    <img src="assets/ウィスキング中の写真.png" alt="ウィスキング施術中"
+                                        class="w-full h-32 object-cover unified-image">
                                 </div>
                             </div>
 
@@ -561,7 +586,7 @@
                                     地産地消へのこだわりと、この土地でしか体験できない香りを大切にしています。
                                     <br>
                                     <span
-                                        class="text-[10px] text-green-700 mt-1 inline-block">※「十勝でウィスキング受けたことあるが、地産地消はここが初めて」（木下斉氏）</span>
+                                        class="text-[10px] text-green-700 mt-1 inline-block">※「十勝でウィスキング受けたことあるが、地産地消はここが初めて」（K様・起業家）</span>
                                 </p>
                             </div>
                         </div>
@@ -580,14 +605,17 @@
 
                             <!-- 休憩中の写真追加 -->
                             <div class="grid grid-cols-3 gap-2 mb-3">
-                                <div class="rounded-lg overflow-hidden shadow-sm">
-                                    <img src="assets/休憩中のドリンク.jpg" alt="休憩中のドリンク" class="w-full h-24 object-cover">
+                                <div class="rounded-lg overflow-hidden shadow-sm img-container">
+                                    <img src="assets/休憩中のドリンク.jpg" alt="休憩中のドリンク"
+                                        class="w-full h-24 object-cover unified-image">
                                 </div>
-                                <div class="rounded-lg overflow-hidden shadow-sm">
-                                    <img src="assets/休憩中の軽食.png" alt="休憩中の軽食" class="w-full h-24 object-cover">
+                                <div class="rounded-lg overflow-hidden shadow-sm img-container">
+                                    <img src="assets/休憩中の軽食.png" alt="休憩中の軽食"
+                                        class="w-full h-24 object-cover unified-image">
                                 </div>
-                                <div class="rounded-lg overflow-hidden shadow-sm">
-                                    <img src="assets/外気浴スペース.jpg" alt="外気浴スペース" class="w-full h-24 object-cover">
+                                <div class="rounded-lg overflow-hidden shadow-sm img-container">
+                                    <img src="assets/外気浴スペース.jpg" alt="外気浴スペース"
+                                        class="w-full h-24 object-cover unified-image">
                                 </div>
                             </div>
                         </div>
@@ -690,10 +718,10 @@
 
             <div
                 class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden group">
-                <div class="w-full h-48 md:h-64 rounded-xl overflow-hidden mb-6 relative shadow-md">
+                <div class="w-full h-48 md:h-64 rounded-xl overflow-hidden mb-6 relative shadow-md img-container">
                     <img src="assets/crab.jpg" alt="京丹後 魚政の茹でたて蟹 – 整えた状態で味わう" loading="lazy" decoding="async"
                         width="1024" height="1024"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 unified-image">
                 </div>
 
                 <div
@@ -730,8 +758,8 @@
                     </p>
 
                     <!-- 魚政・かにべんの写真追加 -->
-                    <div class="rounded-lg overflow-hidden mb-4 shadow-md">
-                        <img src="assets/魚政・かにべんの写真.jpg" alt="魚政・かにべん" class="w-full h-48 object-cover">
+                    <div class="rounded-lg overflow-hidden mb-4 shadow-md img-container">
+                        <img src="assets/魚政・かにべんの写真.jpg" alt="魚政・かにべん" class="w-full h-48 object-cover unified-image">
                     </div>
 
                     <div class="bg-white rounded-lg p-4 mb-4">
@@ -844,7 +872,7 @@
                         「美味しいものを食べる前に、<b>体を最高の状態に整える</b>。
                         ピークに向けてのレールに乗りたかった」
                     </p>
-                    <p class="text-xs text-gray-500">— 小田大輔さん（木下斉氏の狂犬ツアーメンバー）</p>
+                    <p class="text-xs text-gray-500">— O様（京都・経営者）</p>
                 </div>
 
                 <div class="mt-6 bg-[#b93a2b]/10 border border-[#b93a2b]/30 rounded-xl p-4 text-sm text-[#6b3020]">
