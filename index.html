@@ -138,7 +138,7 @@
             気持ちよさが上がっていく流れを、最後までつなげます。
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+        <div class="flex flex-col sm:flex-row gap-3 mb-6">
             <button onclick="safeScrollTo('reservation')"
                 class="bg-black text-white text-sm px-6 py-3 rounded-full font-bold hover:bg-[#333] transition-colors shadow-lg">
                 LINEで相談する
@@ -147,6 +147,28 @@
                 class="bg-white text-gray-900 text-sm px-6 py-3 rounded-full font-bold border border-gray-300 hover:border-[#d4af37] transition-colors shadow-sm">
                 当日の流れを見る
             </button>
+        </div>
+
+        <!-- 3 Points Summary -->
+        <div class="bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-xl p-5 mb-8">
+            <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-3">このプランを3行で</p>
+            <div class="space-y-2">
+                <div class="flex items-start gap-3">
+                    <span
+                        class="shrink-0 w-6 h-6 bg-[#d4af37]/20 rounded-full flex items-center justify-center text-[#d4af37] font-bold text-xs">1</span>
+                    <p class="text-sm text-gray-700"><b>温浴をコース料理のように組み立て</b>、いちばん気持ちいい状態をつくる</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span
+                        class="shrink-0 w-6 h-6 bg-[#b93a2b]/20 rounded-full flex items-center justify-center text-[#b93a2b] font-bold text-xs">2</span>
+                    <p class="text-sm text-gray-700"><b>丹後の蟹（茹でたて）</b>を、体が整った状態で味わう</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span
+                        class="shrink-0 w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-xs">3</span>
+                    <p class="text-sm text-gray-700"><b>送迎・手配はすべてお任せ</b>、手ぶらで来て、満足して帰る</p>
+                </div>
+            </div>
         </div>
 
         <!-- Quick Facts -->
@@ -167,7 +189,7 @@
                     価格
                 </div>
                 <div class="font-serif font-bold text-sm md:text-base text-gray-900">75,000円 / 人</div>
-                <div class="text-[10px] text-gray-500 mt-1">体験・蟹・送迎込</div>
+                <div class="text-[10px] text-gray-500 mt-1">オールインクルーシブ</div>
             </div>
             <!-- Fact 3 -->
             <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
@@ -188,6 +210,25 @@
                 <div class="text-[10px] text-gray-500 mt-1">お酒も可（運転不要）</div>
             </div>
         </div>
+
+        <!-- TODO: 日程確定したら下記を差し替えてください -->
+        <div id="availability"
+            class="bg-gradient-to-r from-[#b93a2b]/5 to-[#d4af37]/5 border border-[#b93a2b]/20 rounded-xl p-4 mb-6">
+            <div class="flex items-start gap-3">
+                <div class="shrink-0 w-10 h-10 bg-[#b93a2b]/10 rounded-full flex items-center justify-center">
+                    <i data-lucide="calendar-check" class="w-5 h-5 text-[#b93a2b]"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-bold text-gray-800 text-sm mb-1">2025-2026 蟹シーズン</p>
+                    <!-- TODO: 具体的な日付が決まったらここを更新 -->
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <b>受付期間：</b><span class="text-[#b93a2b] font-bold">11月〜3月（蟹の漁期）</span><br>
+                        <span class="text-gray-500">※具体的な空き日程は、LINEでお問い合わせください。魚政さんとの調整が必要なため、早めのご連絡がおすすめです。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /日程プレースホルダー -->
 
         <div class="flex items-center justify-end border-b border-gray-200 pb-6">
             <div class="border-2 border-black bg-white px-8 py-3 shadow-[4px_4px_0px_0px_#d4af37]">
@@ -256,7 +297,6 @@
             <div class="text-center mb-8">
                 <p class="text-[10px] font-bold tracking-widest text-gray-400 mb-2">VOICES</p>
                 <h2 class="text-xl md:text-2xl font-bold font-serif">ヌカリチュアル体験者の声</h2>
-                <p class="text-xs text-gray-500 mt-2">（蟹との組み合わせ前の、温浴のみの体験談です）</p>
             </div>
 
             <div class="space-y-4">
@@ -318,12 +358,19 @@
                 </div>
             </div>
 
-            <div class="mt-6 bg-[#fffef0] border border-[#f0d7a5] rounded-xl p-4 text-sm text-[#6b4e16]">
-                <div class="flex items-start gap-2">
-                    <i data-lucide="info" class="w-4 h-4 mt-0.5 shrink-0"></i>
-                    <p class="leading-relaxed">
-                        <b>正直に言うと：</b>これらは「ヌカリチュアル（温浴のみ）」の体験談です。温浴だけでもこんな反応でした。蟹と組み合わせたら、さらに...と期待しています。効果には個人差があります。
-                    </p>
+            <div
+                class="mt-6 bg-gradient-to-r from-[#d4af37]/10 to-[#b93a2b]/10 border border-[#d4af37]/30 rounded-xl p-5 text-sm">
+                <div class="flex items-start gap-3">
+                    <div class="shrink-0 w-10 h-10 bg-[#d4af37]/20 rounded-full flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-[#d4af37]"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-gray-800 mb-1">これは「温浴のみ」の反応です</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            蟹×ヌカリチュアルは新プランのため、まだ体験者の声がありません。<br>
+                            でも、<b>温浴だけでこれだけの反応</b>なら、蟹との組み合わせに期待が高まりませんか？
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -558,6 +605,82 @@
             </div>
         </section>
 
+        <!-- Why Tango Crab Section (NEW) -->
+        <section class="mb-20">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-[#b93a2b] font-bold text-6xl font-serif opacity-20 -mr-6 select-none">蟹</span>
+                <h2 class="text-2xl font-bold pt-4 relative z-10">なぜ、丹後の蟹なのか</h2>
+            </div>
+
+            <div
+                class="bg-gradient-to-br from-[#b93a2b]/5 to-white border border-[#b93a2b]/20 rounded-2xl p-6 md:p-8 shadow-sm">
+                <p class="text-gray-700 leading-relaxed mb-6 text-base">
+                    丹後の蟹は、<b>「幻のカニ」</b>と呼ばれる理由があります。<br>
+                    単に高級なだけではなく、<b>この土地でしか成り立たない条件</b>が揃っています。
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <!-- Point 1 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                        <div class="w-12 h-12 bg-[#b93a2b]/10 rounded-full flex items-center justify-center mb-3">
+                            <i data-lucide="anchor" class="w-6 h-6 text-[#b93a2b]"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-2">日帰り操業＝抜群の鮮度</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            漁場から港まで近く（沖合20〜30km）、<b>小型船で日帰り操業</b>。<br>
+                            水揚げから食卓まで最短。<b>生食できる唯一のズワイガニ</b>とも言われます。
+                        </p>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-3">
+                            <i data-lucide="waves" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-2">「日本海固有水」という奇跡</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            水深250〜400mの漁場は、年間通して約0〜2℃の「日本海固有水」。<br>
+                            <b>低温・高栄養</b>の環境で育つから、身がぎっしり、甘みが強い。
+                        </p>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                        <div class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mb-3">
+                            <i data-lucide="award" class="w-6 h-6 text-amber-600"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-2">間人ガニ（たいざがに）の希少性</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            京丹後・間人漁港で水揚げされる「間人ガニ」は<b>年間約20トン</b>のみ。<br>
+                            船上で<b>約50項目の基準</b>をクリアしたものだけにタグが付きます。
+                        </p>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                        <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-2">「魚政」は50年の老舗</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            京丹後・網野で創業50年。地元漁港から直接仕入れ、<b>茹でたてで提供</b>。<br>
+                            カジが何度も通って信頼している店です。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-[#b93a2b]/10 border border-[#b93a2b]/30 rounded-xl p-4">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="quote" class="w-5 h-5 text-[#b93a2b] shrink-0 mt-0.5"></i>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            <b>結論：</b>丹後の蟹は「豪華だから高い」のではなく、<b>鮮度・環境・品質管理が桁違い</b>だから価値がある。<br>
+                            この蟹を"いちばんいい状態"で味わうために、温浴を先に用意しています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Point 2: Crab -->
         <section class="mb-20">
             <div class="flex items-center gap-4 mb-8">
@@ -766,19 +889,16 @@
                             <span class="text-2xl font-bold font-serif">75,000</span> 円 / 人
                         </p>
 
-                        <div class="bg-gray-50 rounded-lg p-3 mb-3 text-xs text-gray-600 space-y-1">
-                            <div class="flex justify-between">
-                                <span>温浴プログラム（フルアテンド付き）</span>
-                                <span class="font-bold">45,000円</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>魚政の蟹（茹でたて・厳選）</span>
-                                <span class="font-bold">20,000円</span>
-                            </div>
-                            <div class="flex justify-between border-t border-gray-200 pt-1">
-                                <span>送迎・ストーリー案内</span>
-                                <span class="font-bold">10,000円</span>
-                            </div>
+                        <div
+                            class="bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-lg p-3 mb-3 text-sm text-gray-700">
+                            <p class="font-bold flex items-center gap-2 mb-1">
+                                <i data-lucide="package" class="w-4 h-4 text-[#d4af37]"></i>
+                                オールインクルーシブ
+                            </p>
+                            <p class="text-xs text-gray-600">
+                                温浴フルコース・茹でたて蟹・送迎・ストーリー案内、すべて込み。<br>
+                                追加料金なし、手ぶらでOK。
+                            </p>
                         </div>
 
                         <p class="text-xs text-gray-500 leading-relaxed">
